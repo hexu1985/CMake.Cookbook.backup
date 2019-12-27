@@ -1,0 +1,2 @@
+/home/hexu/git/CMake.Cookbook/chapter-03/recipe-01/example/build/CMakeFiles/rebuild_cache.dir
+/home/hexu/git/CMake.Cookbook/chapter-03/recipe-01/example/build/CMakeFiles/edit_cache.dir
