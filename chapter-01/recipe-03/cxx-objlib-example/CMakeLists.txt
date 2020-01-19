@@ -4,6 +4,10 @@ cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 # project name and language
 project(recipe-03 LANGUAGES CXX)
 
+if(WIN32)
+    set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+endif()
+
 # generate an object library from sources
 add_library(message-objs
   OBJECT
@@ -22,19 +26,25 @@ add_library(message-shared
   SHARED
     $<TARGET_OBJECTS:message-objs>
   )
-set_target_properties(message-shared
-  PROPERTIES
-    OUTPUT_NAME "message"
-  )
+
+if(!WIN32)
+    set_target_properties(message-shared
+        PROPERTIES
+        OUTPUT_NAME "message"
+        )
+endif()
 
 add_library(message-static
   STATIC
     $<TARGET_OBJECTS:message-objs>
   )
-set_target_properties(message-static
-  PROPERTIES
-    OUTPUT_NAME "message"
-  )
+
+if(!WIN32)
+    set_target_properties(message-static
+        PROPERTIES
+        OUTPUT_NAME "message"
+        )
+endif()
 
 add_executable(hello-world hello-world.cpp)
 
