@@ -98,7 +98,7 @@ abc和abc/有很大的区别。
 代表将这个目录中的内容安装到目标路径，但不包括这个目录本身。
 PATTERN用于使用正则表达式进行过滤，PERMISSIONS用于指定PATTERN过滤后的文件权限。
 
-_我们来看一个例子_：
+我们来看一个例子：
 ```
 INSTALL(DIRECTORY icons scripts/ DESTINATION share/myproj
         PATTERN "CVS" EXCLUDE
