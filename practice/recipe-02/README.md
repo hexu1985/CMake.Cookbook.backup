@@ -45,7 +45,7 @@ INSTALL(TARGETS targets...
 
 DESTINATION定义了安装的路径，如果路径以/开头，那么指的是绝对路径，这时候CMAKE_INSTALL_PREFIX其实就无效了。如果你希望使用CMAKE_INSTALL_PREFIX来定义安装路径，就要写成相对路径，即不要以/开头，那么安装后的路径就是`${CMAKE_INSTALL_PREFIX}/<DESTINATION定义的路径>`
 
-_举个简单的例子_：
+举个简单的例子：
 ```
 INSTALL(TARGETS myrun mylib mystaticlib
         RUNTIME DESTINATION bin
@@ -53,10 +53,10 @@ INSTALL(TARGETS myrun mylib mystaticlib
         ARCHIVE DESTINATION libstatic
        )
 ```
-上面的例子会将：
-可执行二进制myrun安装到${CMAKE_INSTALL_PREFIX}/bin目录
-动态库libmylib安装到${CMAKE_INSTALL_PREFIX}/lib目录
-静态库libmystaticlib安装到${CMAKE_INSTALL_PREFIX}/libstatic目录
+上面的例子会将：  
+可执行二进制myrun安装到`${CMAKE_INSTALL_PREFIX}/bin`目录，  
+动态库libmylib安装到`${CMAKE_INSTALL_PREFIX}/lib`目录，  
+静态库libmystaticlib安装到`${CMAKE_INSTALL_PREFIX}/libstatic`目录。
 
 INSTALL指令 -- 普通文件的安装：
 ```
