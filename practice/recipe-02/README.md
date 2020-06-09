@@ -10,7 +10,7 @@ add_subdirectory(source_dir [binary_dir] [EXCLUDE_FROM_ALL])
 
 **换个地方保存目标二进制**：
 
-不论是SUBDIRS还是ADD_SUBDIRECTORY指令(不论是否指定编译输出目录)，我们都可以通过SET指令重新定义EXECUTABLE_OUTPUT_PATH和LIBRARY_OUTPUT_PATH变量来指定最终的目标二进制的位置(指最终生成的hello或者最终的共享库，不包含编译生成的中间文件)
+除了add_subdirectory指令(不论是否指定编译输出目录)，我们还可以通过set指令重新定义EXECUTABLE_OUTPUT_PATH和LIBRARY_OUTPUT_PATH变量来指定最终的目标二进制的位置(指最终生成的hello或者最终的共享库，不包含编译生成的中间文件)
 ```
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
