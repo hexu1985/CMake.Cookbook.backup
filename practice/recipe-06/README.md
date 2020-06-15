@@ -241,3 +241,168 @@ find系列指令主要包含一下指令：
     用来调用预定义在`CMAKE_MODULE_PATH`下的`Find<name>.cmake`模块，
     你也可以自己定义`Find<name>`模块，通过`set(CMAKE_MODULE_PATH dir)`将其放入工程的某个目录中供工程使用。
 
+#### if控制指令
+
+1. `if`指令，基本语法为：
+    ```
+    if(expression)
+    # THEN section.
+        COMMAND1(ARGS ...)
+        COMMAND2(ARGS ...)
+        ...
+    else()
+    # ELSE section.
+        COMMAND1(ARGS ...)
+        COMMAND2(ARGS ...)
+        ...
+    endif()
+    ```
+    另外一个指令是elseif，总体把握一个原则，凡是出现if的地方一定要有对应的endif。
+
+2. 简单表达式的使用方法如下：
+    - `if(var)`，如果变量不是：空，0，N, NO, OFF, FALSE, NOTFOUND或`<var>_NOTFOUND`时，表达式为真。
+    - `if(NOT var )`，与上述条件相反。
+    - `if(var1 AND var2)`，当两个变量都为真是为真。
+    - `if(var1 OR var2)`，当两个变量其中一个为真时为真。
+    - `if(COMMAND cmd)`，当给定的cmd确实是命令并可以调用是为真。
+    - `if(EXISTS dir)`或者`IF(exists file)`，当目录名或者文件名存在时为真。
+    - `if(file1 IS_NEWER_THAN file2)`，当file1比file2新，或者file1/file2其中有一个不存在时为真，文件名请使用完整路径。
+    - `if(IS_DIRECTORY dirname)`，当dirname是目录时，为真。
+
+3. 匹配正则表达式regex的使用方法如下：
+    ```
+    if(variable MATCHES regex)
+    if(string MATCHES regex)
+    ```
+    当给定的变量或者字符串能够匹配正则表达式regex时为真。比如：
+    ```
+    if("hello" MATCHES "ell")
+        message("true")
+    endif()
+    ```
+
+4. 数字比较表达式：
+    ```
+    if(variable LESS number)
+    if(string LESS number)
+    if(variable GREATER number)
+    if(string GREATER number)
+    if(variable EQUAL number)
+    if(string EQUAL number)
+    ```
+
+5. 按照字母序的排列进行比较：
+    ```
+    if(variable STRLESS string)
+    if(string STRLESS string)
+    if(variable STRGREATER string)
+    if(string STRGREATER string)
+    if(variable STREQUAL string)
+    if(string STREQUAL string)
+    ```
+
+6. 按照字母序的排列进行比较：
+    ```
+    if(DEFINED variable)，如果变量被定义，为真。
+    ```
+
+7. 一个小例子，用来判断平台差异：
+    ```
+    if(WIN32)
+        message(STATUS “This is windows.”)
+        #作一些Windows相关的操作
+    else()
+        message(STATUS “This is not windows”)
+        #作一些非Windows相关的操作
+    endif()
+    ```
+    如果配合elseif使用，可能的写法是这样:
+    ```
+    if(WIN32)
+        #do something related to WIN32
+    elseif(UNIX)
+        #do something related to UNIX
+    elseif(APPLE)
+        #do something related to APPLE
+    endif()
+    ```
+
+#### while控制指令
+
+WHILE指令的语法是：
+```
+while(condition)
+    COMMAND1(ARGS ...)
+    COMMAND2(ARGS ...)
+    ...
+endwhile()
+```
+其真假判断条件可以参考if指令。
+
+#### foreach控制指令
+
+FOREACH指令的使用方法有三种形式：
+
+1. 列表
+    ```
+    foreach(loop_var arg1 arg2 ...)
+        COMMAND1(ARGS ...)
+        COMMAND2(ARGS ...)
+        ...
+    endforeach()
+    ```
+    像我们前面使用的aux_source_directory的例子
+    ```
+    aux_source_directory(. SRC_LIST)
+    foreach(F ${SRC_LIST})
+        message(${F})
+    endforeach()
+    ```
+
+2. 范围
+    ```
+    foreach(loop_var RANGE total)
+    endforeach()
+    ```
+    从0到total以1为步进，举例如下：
+    ```
+    foreach(VAR RANGE 10)
+        message(${VAR})
+    endforeach()
+    ```
+    最终得到的输出是：
+    ```
+    0
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+    ```
+
+3. 范围和步进：
+    ```
+    foreach(loop_var RANGE start stop [step])
+    endforeach(loop_var)
+    ```
+    从start开始到stop结束，以step为步进，
+    举例如下：
+    ```
+    foreach(A RANGE 5 15 3)
+        message(${A})
+    endforeach()
+    ```
+    最终得到的结果是：
+    ```
+    5
+    8
+    11
+    14
+    ```
+    这个指令需要注意的是，知道遇到endforeach指令，整个语句块才会得到真正的执行。
+

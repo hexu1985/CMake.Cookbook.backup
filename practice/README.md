@@ -5,4 +5,5 @@
 - [静态库与动态库构建](recipe-03/README.md)
 - [使用外部共享库和头文件](recipe-04/README.md)
 - [cmake常用变量和常用环境变量](recipe-05/README.md)
+- [cmake常用指令](recipe-06/README.md)
 
