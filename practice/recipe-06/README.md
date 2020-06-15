@@ -197,6 +197,47 @@
 
 #### [install指令](../recipe-02/README.md)
 
-INSTALL系列指令已经在前面的章节有非常详细的说明，这里不在赘述，可参考前面的安装部分。
+install系列指令已经在前面的章节有非常详细的说明，这里不在赘述，可参考前面的安装部分。
 
+#### find指令
+
+find系列指令主要包含一下指令：
+
+1. `find_file`指令
+    ```
+    find_file(<VAR> name1 [path1 path2 ...])
+    ```
+    VAR变量代表找到的文件全路径，包含文件名
+
+2. `find_library`指令
+    ```
+    find_library(<VAR> name1 [path1 path2 ...])
+    ```
+    VAR变量表示找到的库全路径，包含库文件名, 示例如下：
+    ```
+    find_library(libX X11 /usr/lib)
+    if(NOT libX)
+        message(FATAL_ERROR “libX not found”)
+    endif(NOT libX)
+    ```
+
+3. `find_path`指令
+    ```
+    find_path(<VAR> name1 [path1 path2 ...])
+    ```
+    VAR变量代表包含这个文件的路径。
+
+4. `find_program`指令
+    ```
+    find_program(<VAR> name1 path1 path2 ...)
+    ```
+    VAR变量代表包含这个程序的全路径。
+
+5. `find_package`指令
+    ```
+    find_package(<name> [major.minor] [QUIET] [NO_MODULE]
+                [[REQUIRED|COMPONENTS] [componets...]])
+    ```
+    用来调用预定义在`CMAKE_MODULE_PATH`下的`Find<name>.cmake`模块，
+    你也可以自己定义`Find<name>`模块，通过`set(CMAKE_MODULE_PATH dir)`将其放入工程的某个目录中供工程使用。
 
