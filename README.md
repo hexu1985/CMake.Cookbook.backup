@@ -20,7 +20,7 @@ ubuntu下安装fortan编译器:
 - 《CMake Cookbook》, github翻译地址: https://github.com/xiaoweiChen/CMake-Cookbook
 - 原始项目代码地址: https://github.com/dev-cafe/cmake-cookbook.git
 
-### cmake实践
+### [附录：cmake实践](practice/README.md)
 
 - [初试cmake – cmake的helloworld（一）](practice/recipe-01/README.md)
 - [初试cmake – cmake的helloworld（二）](practice/recipe-02/README.md)
