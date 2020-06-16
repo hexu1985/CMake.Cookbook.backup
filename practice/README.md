@@ -7,4 +7,5 @@
 - [cmake常用变量和常用环境变量](recipe-05/README.md)
 - [cmake常用指令](recipe-06/README.md)
 - [Find模块的使用](recipe-07/README.md)
+- [自定义模块](recipe-08/README.md)
 

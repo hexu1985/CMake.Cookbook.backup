@@ -98,7 +98,7 @@ $ cmake --build . --target install
 或者采用更简单的方式
 
 ```shell
-$ cmake -DCMAKE_INSTALL_PREFIX=/tmp/t3/usr -Bbuild -H.
+$ cmake -H. -Bbuild -DCMAKE_INSTALL_PREFIX=/tmp/t3/usr
 $ cmake --build build/ --target install
 ```
 

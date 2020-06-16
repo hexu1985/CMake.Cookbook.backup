@@ -63,3 +63,22 @@ add_executable(viewer ${mySources} ${optionalSources} )
 target_link_libraries(viewer ${optionalLibs}
 ```
 通过判断系统是否提供了JPEG库来决定程序是否支持JPEG功能。
+
+#### 项目构建
+
+编译项目通过如下命令完成：
+
+```shell
+$ mkdir build
+$ cd build
+$ cmake ..
+$ cmake --build .
+```
+
+或者采用更简单的方式
+
+```shell
+$ cmake -H. -Bbuild
+$ cmake --build build
+```
+

@@ -52,6 +52,22 @@ target_link_libraries(main libhello.so)
 target_link_libraries(main libhello.a)
 ```
 
+#### 项目构建
 
+编译项目通过如下命令完成：
+
+```shell
+$ mkdir build
+$ cd build
+$ cmake ..
+$ cmake --build .
+```
+
+或者采用更简单的方式
+
+```shell
+$ cmake -H. -Bbuild
+$ cmake --build build
+```
 
 
