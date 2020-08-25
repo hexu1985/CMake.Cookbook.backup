@@ -7,6 +7,9 @@
 - [1.1 将单个源文件编译为可执行文件](chapter-01/recipe-01/README.md)
 - [1.2 切换生成器](chapter-01/recipe-02/README.md)
 - [1.3 构建和链接静态库和动态库](chapter-01/recipe-03/README.md)
+- [1.4 用条件句控制编译](chapter-01/recipe-04/README.md)
+- [1.5 向用户显示选项](chapter-01/recipe-05/README.md)
+- [1.6 指定编译器](chapter-01/recipe-06/README.md)
 
 
 ### 安装依赖
