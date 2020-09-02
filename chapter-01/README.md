@@ -6,4 +6,5 @@
 - [1.4 用条件句控制编译](recipe-04/README.md)
 - [1.5 向用户显示选项](recipe-05/README.md)
 - [1.6 指定编译器](recipe-06/README.md)
+- [1.7 切换构建类型](recipe-07/README.md)
 
