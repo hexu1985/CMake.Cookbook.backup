@@ -7,4 +7,5 @@
 - [1.5 向用户显示选项](recipe-05/README.md)
 - [1.6 指定编译器](recipe-06/README.md)
 - [1.7 切换构建类型](recipe-07/README.md)
+- [1.8 设置编译器选项](recipe-08/README.md)
 
