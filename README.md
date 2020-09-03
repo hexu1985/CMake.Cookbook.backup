@@ -16,6 +16,10 @@
 - [1.10 使用控制流](chapter-01/recipe-10/README.md)
 
 
+### [第二章 检测环境](chapter-02/README.md)
+
+- [2.1 检测操作系统](chapter-02/recipe-01/README.md)
+
 ### 安装依赖
 
 ubuntu下安装fortan编译器:
