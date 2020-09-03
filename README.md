@@ -12,6 +12,7 @@
 - [1.6 指定编译器](chapter-01/recipe-06/README.md)
 - [1.7 切换构建类型](chapter-01/recipe-07/README.md)
 - [1.8 设置编译器选项](chapter-01/recipe-08/README.md)
+- [1.9 为语言设定标准](chapter-01/recipe-09/README.md)
 
 
 ### 安装依赖
