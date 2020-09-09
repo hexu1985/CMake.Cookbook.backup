@@ -19,6 +19,11 @@
 ### [第二章 检测环境](chapter-02/README.md)
 
 - [2.1 检测操作系统](chapter-02/recipe-01/README.md)
+- [2.2 处理与平台相关的源代码](chapter-02/recipe-02/README.md)
+- [2.3 处理与编译器相关的源代码](chapter-02/recipe-03/README.md)
+- [2.4 检测处理器体系结构](chapter-02/recipe-04/README.md)
+- [2.5 检测处理器指令集](chapter-02/recipe-05/README.md)
+- [2.6 为Eigen库使能向量化](chapter-02/recipe-06/README.md)
 
 ### 安装依赖
 
