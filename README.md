@@ -25,6 +25,11 @@
 - [2.5 检测处理器指令集](chapter-02/recipe-05/README.md)
 - [2.6 为Eigen库使能向量化](chapter-02/recipe-06/README.md)
 
+## [第三章 检测外部库和程序](chapter-03/README.md)
+
+- [3.1 检测Python解释器](chapter-03/recipe-01/README.md)
+- [3.2 检测Python模块和包](chapter-03/recipe-02/README.md)
+
 ### 安装依赖
 
 ubuntu下安装fortan编译器:
