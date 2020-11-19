@@ -29,6 +29,7 @@
 
 - [3.1 检测Python解释器](chapter-03/recipe-01/README.md)
 - [3.2 检测Python模块和包](chapter-03/recipe-02/README.md)
+- [3.3 检测Python模块和包](chapter-03/recipe-03/README.md)
 
 ### 安装依赖
 
